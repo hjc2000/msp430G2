@@ -1,3 +1,6 @@
 [submodule "lib/UartTar"]
 	path = lib/UartTar
 	url = https://github.com/hjc2000/UartTar.git
+[submodule "lib/queue"]
+	path = lib/queue
+	url = https://github.com/sdesalas/Arduino-Queue.h.git
