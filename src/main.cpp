@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include "MspTar.h"
 #include "DallasTemperature.h"
+// #include "driverlib.h"  //F5529可以通过包含这个头文件使用TI官方库
 
 OneWire oneWire(P1_4);
 DallasTemperature sensors(&oneWire);
@@ -22,9 +23,4 @@ void loop()
   pTar->loop();
   delay(1000);
   digitalWrite(RED_LED, !digitalRead(RED_LED));
-}
-
-#pragma vector = TIMER0_A0_VECTOR
-__interrupt void TIMER0_A0_ISR(void)
-{
 }
