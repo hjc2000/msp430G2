@@ -1,0 +1,98 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "d:/my_files/document/PlatformIO/Projects/G2/include",
+                "d:/my_files/document/PlatformIO/Projects/G2/src",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/cores/msp430",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/variants/MSP-EXP430G2553LP",
+                "C:/Users/huang/.platformio/packages/toolchain-timsp430/msp430/include",
+                "d:/my_files/document/PlatformIO/Projects/G2/lib/UartTar",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/AIR430BoostEuropeETSI",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/AIR430BoostEuropeETSI/utility",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/AIR430BoostUSAFCC",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/AIR430BoostUSAFCC/utility",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/DriverLib",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/DriverLib/utility",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/EduBPMKII_Screen",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/IRremote",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Kentec_35_SPI",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/LCD_Launchpad",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/LiquidCrystal",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/MspFlash",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/PubNub",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/SPI",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/SPI/utility",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Servo",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/SoftwareSerial",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Stepper",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/USBSerial",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/WiFi",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/WiFi/utility",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Wire",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Wire/utility",
+                "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/aJson",
+                "C:/Users/huang/.platformio/packages/tool-unity",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "d:/my_files/document/PlatformIO/Projects/G2/include",
+                    "d:/my_files/document/PlatformIO/Projects/G2/src",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/cores/msp430",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/variants/MSP-EXP430G2553LP",
+                    "C:/Users/huang/.platformio/packages/toolchain-timsp430/msp430/include",
+                    "d:/my_files/document/PlatformIO/Projects/G2/lib/UartTar",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/AIR430BoostEuropeETSI",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/AIR430BoostEuropeETSI/utility",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/AIR430BoostUSAFCC",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/AIR430BoostUSAFCC/utility",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/DriverLib",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/DriverLib/utility",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/EduBPMKII_Screen",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/IRremote",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Kentec_35_SPI",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/LCD_Launchpad",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/LiquidCrystal",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/MspFlash",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/PubNub",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/SPI",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/SPI/utility",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Servo",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/SoftwareSerial",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Stepper",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/USBSerial",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/WiFi",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/WiFi/utility",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Wire",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/Wire/utility",
+                    "C:/Users/huang/.platformio/packages/framework-energiamsp430/libraries/aJson",
+                    "C:/Users/huang/.platformio/packages/tool-unity",
+                    ""
+                ]
+            },
+            "defines": [
+                "F_CPU=16000000L",
+                "PLATFORMIO=50205",
+                "ENERGIA_ARCH_MSP430",
+                "ENERGIA_MSP_EXP430G2553LP",
+                "ARDUINO=10807",
+                "ENERGIA=10810",
+                ""
+            ],
+            "compilerPath": "C:/Users/huang/.platformio/packages/toolchain-timsp430/bin/msp430-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=msp430g2553",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
