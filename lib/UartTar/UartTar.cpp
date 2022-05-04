@@ -1,5 +1,13 @@
 #include <UartTar.h>
 
+UartTar::UartTar(HardwareSerial *pSerial) : m_pSerial(pSerial)
+{
+    m_flag = 0;
+    m_oldData = 0;
+    m_newData = 0;
+    m_receiveCount = 0;
+}
+
 void UartTar::DetectFrameHeader(void)
 {
     if ((m_newData == 85) && (m_oldData == 85))
@@ -33,7 +41,7 @@ void UartTar::GetData(void)
     if (!IsInsertedZero())
     {
         //如果这个数据不是被插入的用来转义的0
-        m_readBuff.push_back(m_newData);
+        m_readBuff.push(m_newData);
         m_receiveCount--;
         if (m_receiveCount == 0)
         {
@@ -75,19 +83,18 @@ void UartTar::AnalysisReadList(uint8_t data)
     m_oldData = m_newData;
 }
 
-void UartTar::PushFrameHeader(void)
+void UartTar::PushFrameHeader(uint16_t count)
 {
-    if (m_sendCount == 85)
+    m_pSerial->write(85);
+    m_pSerial->write(85);
+    if (count == 85)
     {
-        m_sendBuff.push_front(0);
+        m_pSerial->write((uint8_t)0);
     }
     else
     {
-        m_sendBuff.push_front(m_sendCount);
+        m_pSerial->write(count);
     }
-    m_sendCount = 0;
-    m_sendBuff.push_front(85);
-    m_sendBuff.push_front(85);
 }
 
 void UartTar::PushData(uint8_t data)
@@ -95,48 +102,28 @@ void UartTar::PushData(uint8_t data)
     /*如果数据域中出现85*/
     if (data == 85)
     {
-        m_sendBuff.push_back(85);
-        m_sendBuff.push_back(0);
+        m_pSerial->write(85);
+        m_pSerial->write((uint8_t)0);
     }
     else
     {
-        m_sendBuff.push_back(data);
-    }
-    m_sendCount++;
-}
-
-void UartTar::StartSend(void)
-{
-    auto it = m_sendBuff.begin();
-    while (it != m_sendBuff.end())
-    {
-        if (!availableForWrite())
-        {
-            flush();
-        }
-        write(*it);
-        it = m_sendBuff.erase(it);
-    }
-}
-
-void UartTar::tar(uint8_t data, bool bIsEnd)
-{
-    if (bIsEnd)
-    {
-        PushFrameHeader(); //添加帧头
-        StartSend();
-    }
-    else
-    {
-        PushData(data);
+        m_pSerial->write(data);
     }
 }
 
 void UartTar::sendData(const uint8_t *buff, uint16_t size)
 {
+    PushFrameHeader(size);
     for (size_t i = 0; i < size; i++)
     {
-        tar(buff[i], false);
+        PushData(buff[i]);
     }
-    tar(0, true);
+}
+
+void UartTar::loop(void)
+{
+    while (m_pSerial->available())
+    {
+        AnalysisReadList(m_pSerial->read());
+    }
 }
