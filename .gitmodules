@@ -4,6 +4,3 @@
 [submodule "lib/queue"]
 	path = lib/queue
 	url = https://github.com/sdesalas/Arduino-Queue.h.git
-[submodule "lib/OneWire"]
-	path = lib/OneWire
-	url = https://github.com/PaulStoffregen/OneWire.git
