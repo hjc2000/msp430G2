@@ -7,6 +7,27 @@ MspTar::MspTar(HardwareSerial *pSerial) : UartTar(pSerial)
     pTar = this;
 }
 
+void MspTar::LedOperator(Queue<uint8_t> &data)
+{
+    pinMode(RED_LED, OUTPUT);
+    if (data.pop()) //写LED
+    {
+        if (data.pop()) //开
+        {
+            digitalWrite(RED_LED, 1);
+        }
+        else //关
+        {
+            digitalWrite(RED_LED, 0);
+        }
+    }
+    else //读LED
+    {
+        uint8_t state = digitalRead(RED_LED);
+        sendData(1, &state, 1); //发送LED状态
+    }
+}
+
 void MspTar::OnReceive(Queue<uint8_t> &data)
 {
     switch (data.pop())
@@ -15,32 +36,9 @@ void MspTar::OnReceive(Queue<uint8_t> &data)
     {
         break;
     }
-    case 1: // LED开关
+    case 1: // LED
     {
-        if (data.pop())
-        {
-            //红色LED
-            if (data.pop())
-            {
-                //开
-            }
-            else
-            {
-                //关
-            }
-        }
-        else
-        {
-            //绿色LED
-            if (data.pop())
-            {
-                //开
-            }
-            else
-            {
-                //关
-            }
-        }
+        LedOperator(data);
         break;
     }
     case 2: //给定值
