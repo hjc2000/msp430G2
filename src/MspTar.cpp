@@ -12,14 +12,7 @@ void MspTar::LedOperator(Queue<uint8_t> &data)
     pinMode(RED_LED, OUTPUT);
     if (data.pop()) //写LED
     {
-        if (data.pop()) //开
-        {
-            digitalWrite(RED_LED, 1);
-        }
-        else //关
-        {
-            digitalWrite(RED_LED, 0);
-        }
+        digitalWrite(RED_LED, data.pop());
     }
     else //读LED
     {
